@@ -2,7 +2,7 @@
 print('''Enter 1 if your sequence is in 5' to 3' direction.
 Enter 2 if your sequence is in 3' to 5' direction.''' )
 while True:
-    dna_direction = input('>').upper()
+    dna_direction = input('>')
     #if invalid sequence is entered, it asks for user input again
     if dna_direction not in ['1', '1.','2','2.']:
         print('Please enter 1 or 2.')
@@ -10,7 +10,7 @@ while True:
         break
 print('Enter your DNA sequence.')
 
-sequence = input('>')
+sequence = input('>').upper()
 #defining what will be printed
 complementary_sequence = ''
 #here is the loop that analyzes each character in the inputted sequence

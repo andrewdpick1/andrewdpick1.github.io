@@ -2,7 +2,7 @@
 print('''Enter 1 if your sequence is in 5' to 3' direction.
 Enter 2 if your sequence is in 3' to 5' direction.''' )
 while True:
-    dna_direction = input('>')
+    dna_direction = input('>').upper()
     #if invalid sequence is entered, it asks for user input again
     if dna_direction not in ['1', '1.','2','2.']:
         print('Please enter 1 or 2.')

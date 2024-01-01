@@ -1,0 +1,82 @@
+Rosalind challenge answers: 
+
+Challenge #2 - Variables and Some Arithmetic
+
+a = 848
+b = 856
+a = a**2
+b = b**2
+result = a + b
+print(result)
+
+Challenge #3 - Strings and Lists
+
+#notes: f' calls for the literal value of the following variables
+#notes: curly braces ask for the literal of each variable after the f'
+#notes: the square brackets are slicing out particular characters from the given string at the character numbers provided in the brackets. It's kind of like a range.
+
+dataset = 'HumptyDumptysatonawallHumptyDumptyhadagreatfallAlltheKingshorsesandalltheKingsmenCouldntputHumptyDumptyinhisplaceagain.'
+
+word1start = 22
+word1finish = 27
+word2start = 97
+word2finish = 102
+print(f'{dataset[word1start:word1finish + 1]} {dataset[word2start:word2finish + 1]}')
+
+Challenge #4 - Conditions and Loops
+#notes: % 2 != 0 says: if the number's remainder when divided by 2 does not equal 0.
+#notes: odd_sum += number adds the value of 'number' to 'odd_sum' in each iteration, accumulating the sum of odd numbers.
+ 
+a = 100
+b = 200
+
+odd_sum = 0
+for number in range(a, b):
+    if number % 2 != 0:
+        odd_sum += number
+print(f'The value of the sum of the odd integers between {a} and {b} is {odd_sum}.')
+
+Challenge #5 - Working with Files
+#notes: The with statement is used for file handling, ensuring proper opening and closing of the file.
+# 'r' reads the files without modifying them.
+# The as file part allows use of the variable file to interact with the file object. 
+
+line_count = 1
+
+with open('openthis.txt', 'r') as file:
+    for line in file:
+        if line_count % 2 == 0:
+            print(line)
+        line_count +=1 
+    
+Challenge #6 - Dictionaries
+
+
+
+txtStr = 'input text here'
+wordcountdict = {}
+
+for word in txtStr.split():
+    if word in wordcountdict:
+        wordcountdict[word] +=1
+    else:
+        wordcountdict[word] = 1
+
+for key, value in wordcountdict.items():
+    print(key, value)
+
+for key, value in txtStr:
+    print(key)
+
+OR
+
+from collections import Counter
+
+txtStr = 'input text here'
+
+# Use Counter to count word occurrences
+wordcountdict = Counter(txtStr.split())
+
+# Print the word frequencies
+for word, count in wordcountdict.items():
+    print(word, count)
